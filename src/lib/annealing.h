@@ -97,6 +97,8 @@ typedef struct annealing_simple_workspace_t {
   double	damping_factor;
   double	minimum_temperature;
   double	restart_temperature;
+  double	energy_limit;	/* The energy below which no further search is carried */
+  int		energy_limit_set;
   int		restart_flag;
 
   annealing_configuration_t	current_configuration;

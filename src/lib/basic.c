@@ -120,6 +120,7 @@ annealing_simple_solve (annealing_simple_workspace_t * S)
 	S->temperature /= S->damping_factor;
 
       if (S->temperature < S->minimum_temperature) break;
+      if (S->energy_limit_set & (S->energy_limit > S->best_configuration.energy)) break;	
       if (S->temperature < S->restart_temperature)
 	{
 	  set_current_to_best(S);
